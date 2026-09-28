@@ -1,0 +1,34 @@
+// use prisma-8
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  username     String        @unique
+  passwordHash String
+  calculations Calculation[]
+  createdAt    TimestamptzString @default(now())
+  updatedAt    temporal.updatedAtString()
+}
+
+model Calculation {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+
+  productPrice      Float
+  averageOrderValue Float
+  adSpend           Float
+  costPerResult     Float
+
+  resultCount      Int
+  revenue          Float
+  profit           Float
+  roi              Float
+  revenuePerResult Float
+  marginPerResult  Float
+
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+
+  @@index([userId])
+}

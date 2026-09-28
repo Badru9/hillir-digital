@@ -1,0 +1,17 @@
+# Taste
+- Prefers to provide a design reference/mockup image and have the implementation match it visually, rather than describing the design in words. Confidence: 0.7
+- References design assets with the `@` prefix (e.g. `@design2.png`) when asking for follow-up implementation work. Confidence: 0.6
+- Wants the app to cover realistic failure/edge-case states explicitly in the UI (e.g. a dedicated "loss case" / "perlu optimasi" view), not only the happy path — frames this as "mengantisipasi" study cases. Confidence: 0.7
+- Wants a simple first version and iterates from there ("make it simple for now") instead of an ambitious initial build. Confidence: 0.5
+- Communicates in Indonesian and expects replies (including explanation prose) in Indonesian. Confidence: 0.6
+- Asks "why is it done this way" questions about existing code (including project/directory layout choices like `src/` vs `app/`) and wants the reasoning/trade-offs explained, not just a fix. Confidence: 0.6
+- Likes relevant skills/tools to be explicitly activated for a task instead of ad-hoc implementation. Confidence: 0.6
+- Expects all code to follow best practices and be written as clean code. Confidence: 0.7
+- Prefers a consolidated `src/`-based project layout for cleanliness, and is happy to restructure proactively (e.g. moving `app/` under `src/`) when it makes the structure more uniform. Confidence: 0.5
+- Wants a written plan/brief (e.g. a markdown doc committed to the repo) he can review and approve before implementation starts. Confidence: 0.8
+- Extends the "markdown docs in the repo" pattern beyond planning into reusable deliverable artifacts — e.g. a dedicated `docs/slide-deck-prompt.md` containing a ready-to-paste prompt + structured outline for downstream tooling (AI slide generators), kept alongside the other `docs/*.md` files. Confidence: 0.7
+- Prefers terse, no-fluff explanations and invokes a slash command (/unslop, "fuck-slop" skill) to strip filler and padding from replies. Confidence: 0.6
+- Wants code identifiers (DB models/fields, API payloads, function/variable names) written in English as the best-practice default, while keeping user-facing UI copy in the app's local language (e.g. Indonesian). Confidence: 0.65
+- Expects a database seeder script with sample/demo data (e.g. seeded users + records) as part of a project deliverable, made idempotent so re-running is safe. Confidence: 0.5
+- Prefers HeroUI as the component library for a consistent, accessible component set across the project (migrates native Button/Slider/Input/TextField/Card/Table/etc. to HeroUI compounds). Confidence: 0.75
+- When adopting a new library/pattern, prefers wrapping it behind the existing component API (thin adapter layer) rather than rewriting every call site — values backward compatibility and smaller diffs. Confidence: 0.6

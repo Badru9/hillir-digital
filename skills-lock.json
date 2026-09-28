@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "markitdown": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "skillPath": "cli-tool/components/skills/scientific/markitdown/SKILL.md",
+      "computedHash": "1b2ff0693423568ec77669ccb66c7e07363ae3aabef1ff73987490f257d4d46b"
+    }
+  }
+}
