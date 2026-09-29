@@ -42,8 +42,12 @@ export default function LoginForm({ redirectTo }: { redirectTo?: string }) {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Selamat datang kembali</h1>
-        <p className="mt-1 text-sm text-slate-500">Masuk untuk melanjutkan ke dasbor Anda</p>
+        <h1 className="text-2xl font-bold text-slate-900">
+          Selamat datang kembali
+        </h1>
+        <p className="mt-1 text-sm text-slate-500">
+          Masuk untuk melanjutkan ke dasbor Anda
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -64,24 +68,35 @@ export default function LoginForm({ redirectTo }: { redirectTo?: string }) {
           type="password"
           required
           autoComplete="current-password"
-          placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+          placeholder="Masukkan kata sandi Anda"
           value={password}
           onChange={setPassword}
           hint={
-            <span className="text-xs font-medium text-brand">Lupa kata sandi?</span>
+            <span className="text-xs font-medium text-brand">
+              Lupa kata sandi?
+            </span>
           }
         />
 
         {error && (
-          <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>
+          <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">
+            {error}
+          </p>
         )}
 
-        <SubmitButton loading={loading} label="Masuk" loadingLabel="Memproses..." />
+        <SubmitButton
+          loading={loading}
+          label="Masuk"
+          loadingLabel="Memproses..."
+        />
       </form>
 
       <p className="mt-6 text-center text-sm text-slate-500">
         Belum punya akun?{" "}
-        <Link className="font-medium text-brand hover:underline" href="/register">
+        <Link
+          className="font-medium text-brand hover:underline"
+          href="/register"
+        >
           Daftar
         </Link>
       </p>
