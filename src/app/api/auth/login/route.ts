@@ -27,6 +27,10 @@ export async function POST(request: NextRequest) {
     return fail("Email atau kata sandi salah", 401);
   }
 
-  const session = { userId: user.id, email: user.email, username: user.username };
+  const session = {
+    userId: user.id,
+    email: user.email,
+    username: user.username,
+  };
   return attachSessionCookie(ok(session), session);
 }

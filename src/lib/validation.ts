@@ -6,7 +6,10 @@ export const registerSchema = z.object({
     .trim()
     .min(3, "Username minimal 3 karakter")
     .max(32, "Username maksimal 32 karakter")
-    .regex(/^[a-zA-Z0-9_]+$/, "Username hanya boleh huruf, angka, dan underscore"),
+    .regex(
+      /^[a-zA-Z0-9_]+$/,
+      "Username hanya boleh huruf, angka, dan underscore",
+    ),
   email: z.email("Format email tidak valid").max(255, "Email terlalu panjang"),
   password: z
     .string()
@@ -27,8 +30,14 @@ const rupiahAmount = z
 export const calculationSchema = z.object({
   productPrice: rupiahAmount,
   averageOrderValue: rupiahAmount,
-  adSpend: z.number().finite("Nilai harus berupa angka").positive("Pengeluaran harus lebih dari 0"),
-  costPerResult: z.number().finite("Nilai harus berupa angka").positive("CPR harus lebih dari 0"),
+  adSpend: z
+    .number()
+    .finite("Nilai harus berupa angka")
+    .positive("Pengeluaran harus lebih dari 0"),
+  costPerResult: z
+    .number()
+    .finite("Nilai harus berupa angka")
+    .positive("CPR harus lebih dari 0"),
 });
 
 export type RegisterInput = z.infer<typeof registerSchema>;
